@@ -1,0 +1,106 @@
+.star{
+    color: rgb(255, 145, 0);
+  }
+ 
+.star1{
+    color:lightgrey;
+  } 
+
+.icons{
+    border-top: 1px solid lightgray;
+    background-color: #d8e9ef;
+}
+
+.icon{
+    font-size: 19px;
+    color: white;
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
+.title1{
+    background-color: gray;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+    border-radius: 3px 0 6px 0;
+    color: white;
+    font-weight: 600;
+    float: left;
+    text-align: center;
+}
+
+.title2{
+    background-color: orange;
+    border-radius: 13px 0 0 13px;
+    color: white;
+    font-weight: 600;
+    text-align: end;
+    float: right;
+}
+
+.station{
+    color: grey;
+    font-weight: 700;
+}
+
+.number{
+    color: black;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.name{
+    color: grey;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.percent{
+    color:rgb(102, 99, 99);
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 0.1rem;
+}
+
+.card{
+    border-radius: 0% !important;
+    border-color: rgba(211, 211, 211, 0.918);
+}
+
+.inpt{
+    border-radius: 4px 0 0 4px;
+    border: 1px solid lightgrey;
+}
+
+.inpt:focus{
+    outline: none;
+    border: 1px solid lightblue ;
+}
+
+::-webkit-input-placeholder {
+    color: grey;
+    padding-left: 14px;
+ }
+
+.btnsearch{
+    background-color: lightblue;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    font-size: 21px;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid rgba(128, 128, 128, 0.747);
+}
+
+.btnsearch:hover{
+    background-color: rgba(87, 87, 231, 0.815);
+}
+
+
+
+
+
+
+
+

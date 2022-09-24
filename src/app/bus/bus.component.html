@@ -1,0 +1,149 @@
+<br>
+<!-- ************************** Text Search by BusModel **************************** -->
+<div class="justify-content-center d-flex">
+    <input class="inpt w-50" type="text" placeholder="Search Now..."[(ngModel)]="searchValue">
+    <button class="btnsearch" (click)="(search())">Search</button>
+</div><br>
+
+<!-- *********************** Line 1 ************************************ -->
+<div class="container-fluid">
+    <h1 #error style="display: none;">No Buses available</h1>
+   <div #line1 class="row row-cols-1 row-cols-md-3 row-cols-sm-2 g-0">
+    <div *ngFor="let bus of line1Bus" class="card col-lg-2 col-6 mb-4">
+        <div *ngIf="bus.BusModel">
+            <small class="title1"><span class="">{{bus.LineName}}</span></small>
+            <small class="title2 me-0"><span class="ps-3 pe-2">39D : {{bus.StationID}}H</span></small>
+        </div>
+        <p *ngIf="bus.BusModel" class="text-center station pt-2">{{bus.StationName}}</p>
+        <p *ngIf="!bus.BusModel" class="text-center station pt-4 mt-1">{{bus.StationName}}</p>
+        <img class="card-image w-75 m-auto" src="{{images[bus.BusModel]}}" alt="">
+        <div *ngIf="bus.BusModel" class="card-body text-center mb-0">
+            <p class="card-title number mb-0">2500000065740335</p>
+            <p class="name mb-1">{{bus.BusModel}} NF RF E3 Configurable</p>
+            <div class="text-center d-flex justify-content-center mb-0">
+               <div class="pe-3">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star "></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+               </div>
+               <div class="percent"><small>99%</small></div>
+            </div>
+        </div>
+        <div *ngIf="bus.BusModel" class=" pt-2 pb-0 mb-0 mt-0 w-100 icons">
+            <ul style="justify-content: space-evenly;" class="d-flex list-unstyled pb-0 mb-1 pt-1">
+               <li><i class="fas fa-user icon"title='Passengers'>
+                <span style="font-size: 9px;text-shadow: none;" class="position-absolute top-80 start-85 translate-middle badge rounded-pill bg-primary ">
+                    18
+                  </span>
+               </i></li>
+               <li><i class="fas fa-triangle-exclamation icon"></i></li>
+               <li><i class="fas fa-building icon"title='Rate'>
+                <span style="font-size: 9px;text-shadow: none;" class="position-absolute top-80 start-85 translate-middle badge rounded-pill bg-danger ">
+                    {{bus.Rate}}
+                  </span>
+               </i></li>
+               <li><i class="fas fa-bus-simple icon"title='BusID'>
+                <span style="font-size: 9px;text-shadow: none;" class="position-absolute top-80 start-95 translate-middle badge rounded-pill bg-primary ">
+                    {{bus.BusID}}
+                  </span>
+               </i></li>
+            </ul>
+        </div>
+    </div>
+   </div>
+
+   <!-- ************************** Line 2 ********************************** -->
+   <div #line2 class="row row-cols-1 row-cols-md-3 row-cols-sm-2 g-0 mt-5">
+    <div *ngFor="let bus of line2Bus" class="card col-lg-2 col-6 mb-4">
+        <div *ngIf="bus.BusModel">
+            <small class="title1"><span class="">{{bus.LineName}}</span></small>
+            <small class="title2 me-0"><span class="ps-3 pe-2">39D : {{bus.StationID}}H</span></small>
+        </div>
+        <p *ngIf="bus.BusModel" class="text-center station pt-2">{{bus.StationName}}</p>
+        <p *ngIf="!bus.BusModel" class="text-center station pt-4 mt-1">{{bus.StationName}}</p>
+        <img class="card-image w-75 m-auto" src="{{images[bus.BusModel]}}" alt="">
+        <div *ngIf="bus.BusModel" class="card-body text-center mb-0">
+            <p class="card-title number mb-0">2500000065740335</p>
+            <p class="name mb-1">{{bus.BusModel}} NF RF E3 Configurable</p>
+            <div class="text-center d-flex justify-content-center mb-0">
+               <div class="pe-3">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star1"></i>
+                <i class="fas fa-star star1"></i>
+               </div>
+               <div class="percent"><small>74%</small></div>
+            </div>
+        </div>
+        <div *ngIf="bus.BusModel" class=" pt-2 pb-0 mb-0 mt-0 w-100 icons">
+            <ul style="justify-content: space-evenly;" class="d-flex list-unstyled pb-0 mb-1 pt-1">
+               <li><i class="fas fa-user icon"title='Passengers'>
+                <span style="font-size: 9px;text-shadow: none;" class="position-absolute top-80 start-85 translate-middle badge rounded-pill bg-primary ">
+                    18
+                  </span>
+               </i></li>
+               <li><i class="fas fa-triangle-exclamation icon"></i></li>
+               <li><i class="fas fa-building icon"title='Rate'>
+                <span style="font-size: 9px;text-shadow: none;" class="position-absolute top-80 start-85 translate-middle badge rounded-pill bg-danger ">
+                    {{bus.Rate}}
+                  </span>
+               </i></li>
+               <li><i class="fas fa-bus-simple icon"title='BusID'>
+                <span style="font-size: 9px;text-shadow: none;" class="position-absolute top-80 start-95 translate-middle badge rounded-pill bg-primary ">
+                    {{bus.BusID}}
+                  </span>
+               </i></li>
+            </ul>
+        </div>
+    </div>
+   </div>
+   <br>
+
+   <!-- **************************** Search ************************ -->
+   <div style="justify-content:center;" class="row row-cols-1 row-cols-md-3 row-cols-sm-2 g-0">
+    <div *ngFor="let bus of filterBus" class="card col-lg-2 col-6 mb-4">
+        <div>
+            <small class="title1"><span class="">{{bus.LineName}}</span></small>
+            <small class="title2 me-0"><span class="ps-3 pe-2">39D : {{bus.StationID}}H</span></small>
+        </div>
+        <p class="text-center station pt-2">{{bus.StationName}}</p>
+        <img class="card-image w-75 m-auto" src="{{images[bus.BusModel]}}" alt="">
+        <div class="card-body text-center mb-0">
+            <p class="card-title number mb-0">2500000065740335</p>
+            <p class="name mb-1">{{bus.BusModel}} NF RF E3 Configurable</p>
+            <div class="text-center d-flex justify-content-center mb-0">
+               <div class="pe-3">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star "></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+               </div>
+               <div class="percent"><small>99%</small></div>
+            </div>
+        </div>
+        <div class=" pt-2 pb-0 mb-0 mt-0 w-100 icons">
+            <ul style="justify-content: space-evenly;" class="d-flex list-unstyled pb-0 mb-1 pt-1">
+               <li><i class="fas fa-user icon"title='Passengers'>
+                <span style="font-size: 9px;text-shadow: none;" class="position-absolute top-80 start-85 translate-middle badge rounded-pill bg-primary ">
+                    18
+                  </span>
+               </i></li>
+               <li><i class="fas fa-triangle-exclamation icon"></i></li>
+               <li><i class="fas fa-building icon"title='Rate'>
+                <span style="font-size: 9px;text-shadow: none;" class="position-absolute top-80 start-85 translate-middle badge rounded-pill bg-danger ">
+                    {{bus.Rate}}
+                  </span>
+               </i></li>
+               <li><i class="fas fa-bus-simple icon"title='BusID'>
+                <span style="font-size: 9px;text-shadow: none;" class="position-absolute top-80 start-95 translate-middle badge rounded-pill bg-primary ">
+                    {{bus.BusID}}
+                  </span>
+               </i></li>
+            </ul>
+        </div>
+    </div>
+</div>
